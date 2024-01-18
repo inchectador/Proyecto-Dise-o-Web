@@ -1,0 +1,656 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>La casa del árbol</title>
+    <link rel="stylesheet" href="./styles/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+</head>
+<body>
+    <button type="button" id="scrollTop" class="botonScroll">&uarr;</button>
+
+    <!-- sección del header -->
+
+    <header class="header">
+
+        <!-- logo + boton para desplegar el menu -->
+        
+        <img src="./media/img/logo arbol.png" alt="arbol__logo" class="header__img">
+        <button class="header__boton" id="b1" type="button">&equiv;</button>
+
+        <!-- barra de navegación -->
+
+        <nav class="header__nav">
+            <ul class="header__lista header__lista--aparece" id="lista">   
+                <li class="header__elementoLista header__elementoLista--aparece"><a class="header__anchor" href="#tarot"><p class="subrayado">Tarot</p></a></li>
+                <li class="header__elementoLista header__elementoLista--aparece"><a class="header__anchor" href="#astrologia"><p class="subrayado">Astrología</p></a></li>
+                <li class="header__elementoLista header__elementoLista--aparece"><a class="header__anchor" href="#kabbalah"><p class="subrayado">Kabbalah</p></a></li>
+                <li class="header__elementoLista header__elementoLista--aparece"><a class="header__anchor" href="#contacto"><p class="subrayado">Contacto</p></a></li>
+                <li class="header__elementoLista header__elementoLista--aparece"><a class="header__anchor" href="#actividades"><p class="subrayado">Actividades</p></a></li>  
+                <li class="header__elementoLista header__elementoLista--aparece"><a class="header__anchor" href="#peticiones"><p class="subrayado">Peticiones</p></a></li>
+                <li class="header__elementoLista header__elementoLista--aparece"><a class="header__anchor" href="#comentarios"><p class="subrayado">Comentarios</p></a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <!-- main -->
+
+    <main>
+
+        <!-- carrusel -->
+        <section class="carrusel">
+            <div class="slideshowContainer">
+                <div class="slideshowContainer__diapositiva slideshowContainer__fade">
+                    <img src="./media/img/carrusel/astrology.jpg" alt="carta1" class="slideshowContainer__img">
+                    <div class="slideshowContainer__texto">
+                        <h2 class="slideshowContainer__rubrica">Bienvenido a La Casa del Árbol</h2>
+                        <p class="slideshowContainer__parrafo">Somos una tienda esotérica que nos especializamos en libros y productos de Tarot, Astrología y Kabbalah</p>
+                        <div class="puntos">
+                            <span class="puntos__punto">1</span>
+                            <span class="puntos__punto">2</span>
+                            <span class="puntos__punto">3</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="slideshowContainer__diapositiva slideshowContainer__fade">
+                    <img src="./media/img/carrusel/kabbalah.jpg" alt="carta2" class="slideshowContainer__img">
+                    <div class="slideshowContainer__texto">
+                        <h2 class= "slideshowContainer__rubrica">Clases sobre distintas disciplinas</h2>
+                        <p class="slideshowContainer__parrafo">Creemos en el valor de las ciencias ocultas como un legado de nuestro pasado que queremos conservar y transmitir de manera personal</p>
+                        <div class="puntos">
+                            <span class="puntos__punto">1</span>
+                            <span class="puntos__punto">2</span>
+                            <span class="puntos__punto">3</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="slideshowContainer__diapositiva slideshowContainer__fade">
+                    <img src="./media/img/carrusel/tarot.jpg" alt="carta3" class="slideshowContainer__img">
+                    <div class="slideshowContainer__texto">
+                        <h2 class="slideshowContainer__rubrica">Actividades misteriosas</h2>
+                        <p class="slideshowContainer__parrafo">Organizamos actividades para crear una gran comunidad que comparta nuestra ilusión por el misterio</p>
+                        <div class="puntos">
+                            <span class="puntos__punto">1</span>
+                            <span class="puntos__punto">2</span>
+                            <span class="puntos__punto">3</span>
+                        </div>
+                    </div>
+                </div>
+                <button type="button" id="botonSiguiente" class="slideshowContainer__next">></button>
+                <button type="button" id="botonAtras" class="slideshowContainer__prev">&lt;</button>
+
+            </div>
+
+        </section>
+
+        <!-- sección de tarot -->
+
+        <section class="tarot">
+            <h1 class="tarot__titulo"><a name="tarot">Ven e Introducete en el Mundo del Tarot</a></h1>
+            <div class="tarot__arriba">
+                <div class="tarot__cartas">
+                    <!-- boton para abrir modal + img -->
+                    <div class="tarot__carta">
+                        <img src="./media/img/tarot/el-ermitaño.jpg" alt="ermitaño" class="tarot__img" id="ermitano">
+                        <button type="button" class="tarot__boton">El Ermitaño</button>
+                        <!-- modal -->
+                        
+                        <div class="tarot__contenidoModal hidden">
+                            <img src="./media/img/tarot/el-ermitaño.jpg" alt="ermitaño" class="tarot__contenidoImg">
+                            <div class="tarot__cardContenido">
+                                <h2 class="tarot__cardTitulo">El Ermitaño</h2>
+                                <p class="tarot__cardTexto">
+                                    Símbolo de sabiduría y de verdad revelada, portador de la luz e icono de la madurez. El ermitaño
+                                    alberga dentro de sí valores como el de la beatitud, la contemplación y resuena en él el tópico latino
+                                    "mementio mori" con una suma tranquilidad
+                                </p>
+                                <button type="button" class="tarot__cardBoton">&times;</button>
+                            </div>
+                        </div>
+                      
+                    </div>
+                    <div class="tarot__carta">
+
+                        <!-- boton para abrir modal +img-->
+                        <img src="./media/img/tarot/la-emperatriz.jpg" alt="emperatriz" class="tarot__img" id="emperatriz">
+                        <button type="button" class="tarot__boton">La Emperatriz</button>
+                        <!-- modal -->
+                        
+                        <div class="tarot__contenidoModal hidden">
+                            <img src="./media/img/tarot/la-emperatriz.jpg" alt="emperatriz" class="tarot__contenidoImg">
+                            <div class="tarot__cardContenido">
+                                <h2 class="tarot__cardTitulo">La Emperatriz</h2>
+                                <p class="tarot__cardTexto">
+                                    Dueña y señora de la vida, ella es quien determina las reglas de la creación, ella es la Madre 
+                                    Tierra. Su número es el 3, el número del triángulo, la primera figura geométrica, y por lo tanto 
+                                    es el principio del espacio tal y como lo podemos llegar a concebir. Dentro suya se albergan profundos
+                                    secretos
+                                </p>
+                                <button type="button" class="tarot__cardBoton">&times;</button>
+                            </div>
+                        </div>
+                    
+                    </div>
+                </div>
+
+                <!-- texto al lado de las cartas -->
+                <div class="tarot__texto">
+                    <p class="tarot__textoParrafo">  
+                        El tarot es un instrumento de cartomancia que nació en el siglo XV usado para la adivinación, pero que también conforma un instrumento
+                        de reflexión sobre arquetipos de la personalidad, sobre procesos de evolución de la conciencia y del conocimiento esotérico que ayudan
+                        al iniciado en su viaje por la psique y por su propio mundo interior. 
+                    </p>
+                </div>
+            </div>
+            <div class="tarot__abajo">
+
+                <!-- texto al lado de las cartas -->
+                <div class="tarot__texto tarot__texto1">
+                    <p class="tarot__textoParrafo">
+                        Trabajamos con muchos tipos de barajas de tarot distintas: Marsella, Raider Waite, Aleister Crowley... También tenemos cursos avanzados
+                        donde introducimos al alumno dentro del tarot como método para viajar por el árbol de la vida, como forma de autoconocimiento a través
+                        de la astrología, también le enseñamos a meditar sobre las distintas cartas...
+                    </p>
+                </div>
+                <div class="tarot__cartas">
+                    <div class="tarot__carta tarot__carta1">    
+                        <!-- boton para abrir modal + img-->
+                        <img src="./media/img/tarot/la-luna.jpg" alt="luna" class="tarot__img" id="luna">
+                        <button type="button" class="tarot__boton">La Luna</button>
+                        <!--modal -->
+                        
+                        <div class="tarot__contenidoModal hidden" id="luna1">
+                            <img src="./media/img/tarot/la-luna.jpg" alt="luna" class="tarot__contenidoImg">
+                            <div class="tarot__cardContenido">
+                                <h2 class="tarot__cardTitulo">La luna</h2>
+                                <p class="tarot__cardTexto">
+                                    La luna es símbolo de las crisis existenciales y de los tránsitos de la psique hacia un nuevo
+                                    horizonte de desarrollo. Aunque la luna siempre se ha conservado como un símbolo del poder del 
+                                    imaginario femenino, también algo de crítico aquí, algo de oscuro y desolador en el tránsitor
+                                    de "la oscura noche del alma".
+                                </p>
+                                <button type="button" class="tarot__cardBoton">&times;</button>
+                            </div>
+                        </div>
+
+                    </div>
+                    <div class="tarot__carta tarot__carta1">
+
+                        <!-- boton para abrir modal + img-->                        
+                        <img src="./media/img/tarot/la-muerte.jpg" alt="muerte" class="tarot__img">
+                        <button type="button" class="tarot__boton">La Muerte</button>
+                        <!-- modal -->
+                        
+                        <div class="tarot__contenidoModal hidden" id="muerte1">
+                            <img src="./media/img/tarot/la-muerte.jpg" alt="muerte" class="tarot__contenidoImg" id="muerte">
+                            <div class="tarot__cardContenido">
+                                <h2 class="tarot__cardTitulo">La Muerte</h2>
+                                <p class="tarot__cardTexto">
+                                    Si bien la muerte se ha pensado siempre como la muerte física, la carta de la muerte en el
+                                    tarot anuncia cambios radicales. La muerte aparece despojada de la carne, es decir, de su parte
+                                    caduca, lista la para deshuesar a aquellos que todavía se resistan ante su mortal y delirante baile.
+                                </p>
+                                <button type="button" class="tarot__cardBoton">&times;</button>
+                            </div>
+                        </div>
+                       
+                    </div>
+                </div>
+            </div>
+            <div class="tarot__contenedorModal hidden"></div>
+        </section>
+
+        <!-- astrologia -->
+
+        <section class="astrologia">
+            <h2 class="astrologia__titulo"><a name="astrologia">Descubre y Entiende tu Horóscopo</a></h2>
+            <div class="astrologia__cards">
+
+                <!-- menu acordeon 1 -->
+                <div class="astrologia__solar">
+                    <h3 class="astrologia__tituloCard">Solar</h3>
+                    <img src="./media/img/astrologia/solar.jpg" alt="solar" class="astrologia__img">
+                    <button type="button" class="acordeon">¿Sabes lo que es el Signo Solar?</button>
+                    <div class="astrologia__panel">
+                        El signo solar es el que determina la esencia de cada uno de nosotros, nuestro yo más puro y aquello a lo que
+                        aspiramos. Debe diferenciarse del ascendente, pues el signo solar es una personalidad más individual, y el 
+                        ascendente es una personalidad más compartida con los demás.
+                    </div>
+                    <button type="button" class="acordeon">Aprende astrología</button>
+                    <div class="astrologia__panel">
+                        Con nuestros cursos podrás entender los movimientos de los astros en torno a tu configuración astrológica natal
+                        y adquirir recursos para tu propio descubrimiento interior y el desarrollo personal.
+                    </div>
+                    <button type="button" class="acordeon">Nosotros te enseñamos</button>
+                    <div class="astrologia__panel">
+                        Tenemos grupos reducidos donde te enseñamos las nociones básicas y entiendas cómo se razona astrológicamente
+                    </div>
+                </div>
+
+                <!-- menu acordeon 2 -->
+                <div class="astrologia__lunar">
+                    <h3 class="astrologia__tituloCard">Lunar</h3>
+                    <img src="./media/img/astrologia/lunar.jpg" alt="lunar" class="astrologia__img">
+                    <button type="button" class="acordeon">¿Sabes lo que es el Signo Lunar?</button>
+                    <div class="astrologia__panel">
+                        El signo lunar tiene un componente intrinsecamente emocional, pues define nuestras emociones, cómo las expresamos.
+                        También el signo lunar tiene una vinculación innegable con la figura de la madre, es decir, el signo lunar también
+                        nos habla de cómo es nuestro vínculo con nuestra progenitora.
+                    </div>
+                    <button type="button" class="acordeon">Confecciona horóscopos</button>
+                    <div class="astrologia__panel">
+                        La astrología es bien sabida como un recurso terapéutico; con ella podrás entender la predisposición astrológica de
+                         las personas y de ti mismo frente a diversos ámbitos de la vida, como el trabajo, el amor, las amistades...
+                    </div>
+                    <button type="button" class="acordeon">Astrología, alquimia, magia</button>
+                    <div class="astrologia__panel">
+                        Como en todas las disciplinas, existe una interconexión entre todas, poco a poco las irás descubriendo.
+                    </div>
+                </div>
+
+                <!-- menu acordeon 3 -->
+                <div class="astrologia__ascendente">
+                    <h3 class="astrologia__tituloCard">Ascendente</h3>
+                    <img src="./media/img/astrologia/ascendente.jpg" alt="ascendente" class="astrologia__img">
+                    <button type="button" class="acordeon">¿Sabes lo que es el Signo ascendente?</button>
+                    <div class="astrologia__panel">
+                        El signo ascendente define nuestro "yo" social, cómo nos ven los demás y cómo nos comportamos normalmente, en piloto
+                        automático. Es nuestra máscara social, lo que nos constituye como personas dentro de una sociedad, nos da forma para
+                        poder tener lugar dentro de las interacciones sociales.
+                    </div>
+                    <button type="button" class="acordeon">Descubre tu mundo interior</button>
+                    <div class="astrologia__panel">
+                        Al final, la astrología nos brinda una posibilidad para acercarnos a un mundo imaginario autónomo que nos permite
+                        conectar con nuestras propias emociones, con nuestra propia fantasía, con algo enteramente nuestro.
+                    </div>
+                    <button type="button" class="acordeon">Mejora tu yo interior</button>
+                    <div class="astrologia__panel">
+                        Nuestra labor se centra sobre todo en que la experiencia astrlógica sea para el mejoramiento y la felicidad de ti mismo
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- kabbalah -->
+
+        <section class="kabbalah">
+
+            <div class="kabbalah__parallax1"><a name="kabbalah"></a></div>
+            <div class="kabbalah__texto1">Adéntrate en los secretos del alma a través del árbol de la vida</div>
+            <div class="kabbalah__parallax1"></div>
+
+            <div class="kabbalah__parallax2"></div>
+            <div class="kabbalah__texto2">Conoce qué relación existe entre las verdades de la creación y nuestra propia realidad</div>
+            <div class="kabbalah__parallax2"></div>
+
+            <div class="kabbalah__parallax3"></div>
+            <div class="kabbalah__texto3">Alcanza la paz interior a través de la meditación consciente</div>
+            <div class="kabbalah__parallax3"></div>
+
+            <div class="kabbalah__parallax4"></div>
+            <div class="kabbalah__texto4">Conócete a ti mismo</div>
+            <div class="kabbalah__parallax4"></div>
+
+        </section>
+
+        <!-- contacto -->
+
+         <section class="contacto">
+            
+            <div class="contacto__contenedor">
+
+                <!-- formulario -->
+                <div class="contacto__divFormulario">
+                    <h2 class="contacto__titulo"><a name="contacto">Contacta con nosotros</a></h2>
+                    <p class="contacto__parrafo">Envíanos cualquier consulta que tengas a través de nuestro formulario</p>
+                    <form action="#" method="GET" class="contacto__formulario">
+                        <h3 class="contacto__formularioTitulo">Formulario de contacto</h3>
+                        <label class="label" for="nom">Nombre:</label>
+                        <input type="text" id="nom" name="nombre" class="inputFormulario">
+                        <label class="label" for="em"> Email:</label>
+                        <input type="text" class="inputFormulario">
+                        <label class="label" for="txt">¿Qué quieres contarnos?</label>
+                        <textarea name="texto" id="txt" cols="30" rows="10"></textarea>
+                    </form>
+                </div>
+
+                <!-- mapa -->
+                <div class="contacto__mapa">
+                    <h2 class="contacto__mapaTitulo">Estamos muy cerca de ti</h2>
+                    <p class="contacto__mapaTexto">Acércate y resolveremos personalmente tus dudas</p>
+                    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d777.8973805705864!2d-3.3937284154492193!3d38.75018070050171!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0xd6937961db59bdd%3A0xc4bcf887149bdf75!2sLA%20CASA%20DEL%20%C3%81RBOL%2C%20Centro%20de%20Ocio%20y%20Desarrollo%20Infantil!5e0!3m2!1ses!2ses!4v1704179493417!5m2!1ses!2ses"
+                    width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade" id="mapa"></iframe>
+                </div>
+                
+            </div>
+        </section>
+
+        <!-- actividades -->
+
+        <section class="actividades">
+
+
+            <!-- actividad 1 -->
+            <div class="contenedorCard" id="case0">
+                <div class="card" id="case0">
+                  <img src="./media/img/actividades/horoscopo.jpg" alt="html" class="actividades__img" />
+                  <div class="cardContenido">
+                    <h3 class="cardContenido__titulo"><a name="actividades">¡Hoy tenemos lectura de horóscopos!</a></h3>
+                    <p class="cardContenido__texto">
+                        Los primeros días de la semana lo reservamos para descubrir los misterios del cielo
+                        y cómo nos afecta lo que tenemos sobre nuestras cabezas ¡únete a nosotros!
+                    </p>
+                  </div>
+                </div>
+            </div>
+
+                 <!-- actividad 2 -->
+              <div class="contenedorCard" id="case1">
+                <div class="card">
+                  <img src="./media/img/actividades/tarot.jpg" alt="html" class="actividades__img" />
+                  <div class="cardContenido">
+                    <h3 class="cardContenido__titulo"><a name="actividades">¡Hoy tenemos tiradas de tarot!</a></h3>
+                    <p class="cardContenido__texto">
+                        Los martes quedamos en nuestros rincón especial para ejercitar la cartomancia, para desentrañar el significado
+                        oculto de estos naipes, para desarrollar imaginativamente las imágenes de las cartas.
+                    </p>
+                  </div>
+                </div>
+              </div>
+
+               <!-- actividad 3 -->
+              <div class="contenedorCard" id="case2">
+                <div class="card">
+                  <img src="./media/img/actividades/tai chi.jpg" alt="html" class="actividades__img" />
+                  <div class="cardContenido">
+                    <h3 class="cardContenido__titulo"><a name="actividades">¡Hoy tenemos sesión de tai chi!</a></h3>
+                    <p class="cardContenido__texto">
+                        Con la colaboración especial de nuestro monitor, organizamos activiades para descubrir los secretos de nuestra
+                        energía interior y cómo podemos moverla, usarla y transformarla ¡Apúntate y reserva tu plaza!
+                    </p>
+                  </div>
+                </div>
+              </div>
+
+               <!-- actividad 4 -->
+              <div class="contenedorCard" id="case3">
+                <div class="card">
+                  <img src="./media/img/actividades/meditacion.jpg" alt="html" class="actividades__img" />
+                  <div class="cardContenido">
+                    <h3 class="cardContenido__titulo"><a name="actividades">¡Hoy tenemos taller de meditación!</a></h3>
+                    <p class="cardContenido__texto">
+                        No solo de leer se vale el misterio. Con la meditación queremos transmitir la paz interior que tan poco en cuenta
+                        se suele tener hoy día, además de ser una pieza fundamental en el conocimiento de uno mismo.
+                    </p>
+                  </div>
+                </div>
+              </div>
+
+               <!-- actividad 5 -->
+              <div class="contenedorCard" id="case4">
+                <div class="card">
+                  <img src="./media/img/actividades/reiki.jpg" alt="html" class="actividades__img" />
+                  <div class="cardContenido">
+                    <h3 class="cardContenido__titulo"><a name="actividades">¡Hoy tenemos sesión de reiki y terapias alternativas!</a></h3>
+                    <p class="cardContenido__texto">
+                        El reiki es una disciplina que ha venido cogiendo fama desde hace poco tiempo, y que principalmente busca la 
+                        sanación del cuerpo a través de la imposición de manos. También contamos con hipnoterapias y terapias Chi Kung.
+                    </p>
+                  </div>
+                </div>
+              </div>
+
+               <!-- actividad 6 -->
+              <div class="contenedorCard" id="case5">
+                <div class="card">
+                  <img src="./media/img/actividades/lectura.jpg" alt="html" class="actividades__img" />
+                  <div class="cardContenido">
+                    <h3 class="cardContenido__titulo"><a name="actividades">¡Hoy tenemos club de lectura!</a></h3>
+                    <p class="cardContenido__texto">
+                        Nuestro día favorito sin duda alguna. Tomaremos una lectura que nos parezca especialmente interesante en un 
+                        sentido esotérico, y analizaremos su sentido, sus símbolos, su doctrina... Para dar paso posteriormente a un
+                        debate y turno de preguntas.
+                        
+                    </p>
+                  </div>
+                </div>
+              </div>
+
+               <!-- actividad 7 -->
+              <div class="contenedorCard" id="case6">
+                <div class="card">
+                  <img src="./media/img/actividades/descanso.jpg" alt="html" class="actividades__img" />
+                  <div class="cardContenido">
+                    <h3 class="cardContenido__titulo"><a name="actividades">Hoy descansamos.</a></h3>
+                    <p class="cardContenido__texto">
+                        Los domingos los dedicamos al descanso y a seguir maquinando nuevas actividades que podamos ofreceros.
+                    </p>
+                  </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- peticiones -->
+
+        <section class="peticiones">
+            <h2 class="peticiones__titulo"><a name="peticiones">Peticiones y solicitudes</a></h2>
+            <h3 class="peticiones__intro">
+                En la casa del árbol buscamos mejorar constantemente y atender vuestras necesidades, por lo que hemos creado una
+                nueva sección en la que acogemos vuestras sugerencias, las actividades que en un futuro os gustaría hacer con nosotros,
+                los libros y artículos que os interesen...
+            </h3>
+
+
+            <div class="peticiones__contenedor">
+
+
+
+                <!-- to do list 1 -->
+                <div class="peticiones__contenedorCard">
+                    <div class="peticiones__form">
+                        <form class="peticiones__formulario peticiones__formulario--1">
+                            <input class="peticiones__input " type="text" placeholder="Sugiere algún artículo..." id="1">
+                            <button class="peticiones__button">
+                                <div class="peticiones__icono">
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-arrow-left-short" viewBox="0 0 16 16">
+                                        <path fill-rule="evenodd" d="M12 8a.5.5 0 0 1-.5.5H5.707l2.147 2.146a.5.5 0 0 1-.708.708l-3-3a.5.5 0 0 1 0-.708l3-3a.5.5 0 1 1 .708.708L5.707 7.5H11.5a.5.5 0 0 1 .5.5"/>
+                                    </svg>
+                                </div>
+                            </button>
+                        </form>
+                    </div>
+                    <div class="peticiones__lista">
+                        <ul class="peticiones__ul">
+
+                        </ul>
+                    </div>
+                    <div class="peticiones__vacio peticiones__vacio--1">
+                        <p>Sugiere alguna petición...</p>
+                    </div>
+                </div>
+
+
+                <!-- to do list 2 -->
+                <div class="peticiones__contenedorCard">
+                    <div class="peticiones__form">
+                        <form class="peticiones__formulario peticiones__formulario--2">
+                            <input class="peticiones__input" type="text" placeholder="Sugiere algún curso..." id="2">
+                            <button class="peticiones__button">
+                                <div class="peticiones__icono">
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-arrow-left-short" viewBox="0 0 16 16">
+                                        <path fill-rule="evenodd" d="M12 8a.5.5 0 0 1-.5.5H5.707l2.147 2.146a.5.5 0 0 1-.708.708l-3-3a.5.5 0 0 1 0-.708l3-3a.5.5 0 1 1 .708.708L5.707 7.5H11.5a.5.5 0 0 1 .5.5"/>
+                                    </svg>
+                                </div>
+                            </button>
+                        </form>
+                    </div>
+                    <div class="peticiones__lista">
+                        <ul class="peticiones__ul">
+
+                        </ul>
+                    </div>
+                    <div class="peticiones__vacio peticiones__vacio--2">
+                        <p>Sugiere alguna petición...</p>
+                    </div>
+                </div>
+
+
+
+                <!-- to do list 3 -->
+                <div class="peticiones__contenedorCard">
+                    <div class="peticiones__form">
+                        <form class="peticiones__formulario peticiones__formulario--3">
+                            <input class="peticiones__input" type="text" placeholder="Sugiere mejoras...">
+                            <button class="peticiones__button">
+                                <div class="peticiones__icono">
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-arrow-left-short" viewBox="0 0 16 16">
+                                        <path fill-rule="evenodd" d="M12 8a.5.5 0 0 1-.5.5H5.707l2.147 2.146a.5.5 0 0 1-.708.708l-3-3a.5.5 0 0 1 0-.708l3-3a.5.5 0 1 1 .708.708L5.707 7.5H11.5a.5.5 0 0 1 .5.5"/>
+                                    </svg>
+                                </div>
+                            </button>
+                        </form>
+                    </div>
+                    <div class="peticiones__lista">
+                        <ul class="peticiones__ul">
+
+                        </ul>
+                    </div>
+                    <div class="peticiones__vacio peticiones__vacio--3">
+                        <p>Sugiere alguna petición...</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- comentarios -->
+        <section class="comentarios">
+            <h2 class="comentarios__titulo"><a name="comentarios">Algunos de nuestros comentarios</a></h2>
+            <div class="comentarios__cards">
+
+                <!-- card1 -->
+                <div class="comentarios__card">
+                  <div class="header">
+                    <div class="date">11 de abril de 2015</div>
+                    <div class="title">
+                        Una tienda super acogedora y bonita. Los dueños son muy agradables y existe gran cantidad
+                        de material esotérico.
+                    </div>
+                  </div>
+                  <div class="footer">
+                    <div class="author">
+                      <a href="#">
+                        <img src="" alt="" />
+                        <span>Verónica Figeroas Izquierdo, Guipuzcua</span>
+                      </a>
+                    </div>
+                  </div>
+                </div>
+            
+
+                <!-- card 2 -->
+                <div class="comentarios__card element-1">
+                  <div class="header">
+                    <div class="date">20 de agosto de 2019</div>
+                    <div class="title">Descubrí mi lado más espiritual gracias a la casa del árbol. Tienen un espíritu de unión y
+                        cooperación entre todos sus miembros, que son una gran familia.
+                    </div>
+                  </div>
+                  <div class="footer">
+                    <div class="author">
+                      <a href="#">
+                        <img src="" alt="" />
+                        <span>Roberto Azpilicueta Contreras, Gran Canaria</span>
+                      </a>
+                    </div>
+                  </div>
+                </div>
+            
+
+                <!-- card 3 -->
+                <div class="comentarios__card element-2">
+                  <div class="header">
+                    <div class="date">2 de junio de 2021</div>
+                    <div class="title">He asistido a algunos de los talleres que tienen y realmente es una experiencia que se repite,
+                        entras en contacto con tu verdadero yo y con los demás a un nivel superior.
+                    </div>
+                  </div>
+                  <div class="footer">
+                    <div class="author">
+                      <a href="#">
+                        <img src="" alt="" />
+                        <span>Elisa Aguilera de la Vera, Plasencia</span>
+                      </a>
+                    </div>
+                  </div>
+                </div>
+                
+
+                <!-- card 4 -->
+                <div class="comentarios__card element-3">
+                  <div class="header">
+                    <div class="date">1 de enero de 2023</div>
+                    <div class="title">No estoy satisfecho para nada de esta tienda; quiero decir, los dueños parecen salidos de una secta,
+                        los libros no dicen más que chorradas, la web es feísima...
+                    </div>
+                  </div>
+                  <div class="footer">
+                    <div class="author">
+                      <a href="#">
+                        <img src="" alt="" />
+                        <span>Juan Martínez Oriondo, Ciudad Real</span>
+                      </a>
+                    </div>
+                  </div>
+                </div>
+            </div>
+
+
+
+
+
+
+            <!-- sección para comentar -->
+            <h2 class="comentar__titulo">¿Te ha gustado la web? ¡deja aquí tus comentarios!</h2>
+            <div id="app">
+                <div id="comments-container"></div>
+            </div>
+        </section>
+
+    </main>
+
+    <footer class="footer">
+        <div class="footer__columna">
+            <div class="footer__columna2">
+                <ul>
+                    <li class="footer__columnaTitulo">Entérate</li>
+                    <li class="elemento">Términos y condiciones</li>
+                    <li class="elemento">Aviso legal</li>
+                    <li class="elemento">Politica de privacidad</li>
+                </ul>
+            </div>
+            <div class="footer__columna3">
+                <ul>
+                    <li class="footer__columnaTitulo">Actividades</li>
+                    <li class="elemento">Cursos y talleres</li>
+                   
+                </ul>
+            </div>
+            <div class="footer__columna4">
+                <li class="footer__columnaTitulo">Comunidad</li>
+                <li class="elemento">foro</li>
+                <li class="elemento">
+                    <i class="fa-brands fa-instagram"></i>
+                    &nbsp;&nbsp;
+                    <i class="fa-brands fa-twitter"></i>
+                    &nbsp;&nbsp;
+                    <i class="fa-brands fa-youtube"></i>
+                </li>
+            </div>
+        </div>
+    </footer>
+
+
+</body>
+<script src="./script.js"></script>
+</html>

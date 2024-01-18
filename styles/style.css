@@ -1,0 +1,1392 @@
+/* colores */
+
+:root{
+    --verdePigmento: #15A64F;
+    --violetaOscurete: #9308AF;
+    --colorAlvero: #DC8C1C;
+    --rosaRaro: #B84A66;
+    --ultraVioleta: #54577F;
+
+
+
+
+    --white: #fff;
+    --bg: #dbebfa;
+    --pink: #9b29b7;
+    --blue-dark: #4763ef;
+    --font: 'Roboto Mono', sans-serif;
+}
+
+/* font families */
+
+@font-face {
+    font-family: Lora;
+    src: url('../media/fonts/Lora/Lora-Italic-VariableFont_wght.ttf');
+}
+
+@font-face {
+    font-family: Long_Cang;
+    src: url('../media/fonts/Long_Cang/LongCang-Regular.ttf');
+}
+
+@font-face {
+    font-family: Cormorant;
+    src: url('../media/fonts/Cormorant_Garamond/CormorantGaramond-SemiBoldItalic.ttf');
+}
+
+/* miscelaneo */
+
+*{
+    box-sizing: border-box;
+    scroll-behavior: smooth;
+}
+
+body{
+    margin: 0;
+    padding: 0;
+}
+
+
+/* botón Scroll */
+
+
+.botonScroll{
+    position: fixed;
+    bottom: 1.2rem;
+    right: 1.8rem;
+    z-index: 1;
+    font-size: 1.2rem;
+    border: none;
+    outline: none;
+    background-color: var(--violetaOscurete);
+    color: white;
+    cursor: pointer;
+    padding: 1rem;
+    border-radius: 10rem;
+    animation: salir 0.5s;
+    z-index: 5;
+}
+
+@keyframes salir {
+    from{
+        transform: translateY(50rem);
+    }
+    to{
+        transform: translate(0);
+    }
+}
+
+/* esta animación hace que salga desde abajo el botón */
+
+.botonScroll:hover{
+background-color: rgb(156, 106, 202);
+padding: 1.3rem;
+}
+
+
+
+
+
+
+
+/* sección del header */
+
+
+/* barra de navegación */
+
+.header{
+    display: flex;
+    justify-content: space-around;
+    background-color: white;
+    position: fixed;
+    z-index: 1;
+    width: 100%;
+}
+
+.header__img{
+    height: 4rem;
+    width: 4rem;
+    position: relative;
+    top: 2rem;
+}
+
+.header__lista{
+    list-style-type: none;
+    display: flex;
+    justify-content: space-between;
+}
+
+
+.header__elementoLista{
+    padding: 1rem;
+    color: var(--verdePigmento);
+    font-size: 1.2rem;
+    cursor: pointer;
+    font-family: Lora;
+}
+
+.header__anchor{
+    text-decoration: none;
+}
+
+
+
+
+
+/* subrayado del header */
+
+.subrayado{
+    color: var(--verdePigmento);
+    display: inline-block;
+    position: relative;
+}
+
+.subrayado:after{
+    content: '';
+  position: absolute;
+  width: 100%;
+  transform: scaleX(0);
+  height: 4px;
+  bottom: 0;
+  left: 0;
+  background-color: var(--pink);
+  transform-origin: bottom right;
+  transition: transform 0.6s ease-out;
+}
+
+
+.subrayado:hover:after{
+    transform: scaleX(1);
+    transform-origin: bottom left;
+}
+
+
+
+
+
+
+
+
+
+
+.header__boton{
+    display: none;
+    border: none;
+    outline: none;
+    background-color: transparent;
+    cursor: pointer;
+    transition: font-size 1s;
+    margin: 0 1rem;
+    padding: 1rem 0;
+    font-size: 2.2rem;
+}
+
+.header__boton:hover{
+    font-size: 2.5rem;
+}
+
+/* parte responsive del header*/
+
+@media screen and (max-width:976px){
+   
+    .header__elementoLista--aparece{
+        background-color: transparent;
+        color: var(--verdePigmento);
+        height: 2rem;
+        right: 0;
+        padding: 2.1rem 2rem;
+        display: flex;
+        text-align: center;
+        align-items: center;
+        top: 7rem;
+
+    }
+    .header__lista--aparece{
+        display: none;
+        position: relative;
+        top: 5.7rem;
+        
+
+    }
+    .header__boton{
+        display: block;
+        right: 4rem;
+        position: absolute;
+        margin: 2rem;
+        color: var(--verdePigmento);
+    }
+    .header{
+        display: flex;
+        justify-content: space-between;
+        width: 100%;
+        height: 8rem;
+        
+    }
+    .header__img{
+        margin: 2rem;
+        
+    }
+    
+
+}
+
+
+
+/* carrusel */
+
+.slideshowContainer{
+   top: 0;
+   width: 100%;
+}
+
+.slideshowContainer__img{
+    height: 60vh;
+    width: 60%;
+    position: relative;
+    top: 6rem;
+}
+
+/* este código estiliza los botones */
+
+.slideshowContainer__next, .slideshowContainer__prev{
+    cursor: pointer;
+    position: absolute;
+    top: 50%;
+    width: auto;
+    padding: 1rem;
+    color: white;
+    font-weight: bold;
+    font-size: 1.2rem;
+    border-radius: 3px;
+    border: none;
+    outline: none;
+    background-color: transparent;
+    transition: background-color 0.6 ease;
+}
+
+.slideshowContainer__next:hover, .slideshowContainer__prev:hover{
+    background-color: rgba(0, 0, 0, 0.8);
+}
+
+/* span para ir a las demás imágenes del carrusel */
+
+.puntos{
+    text-align: center;
+}
+
+.puntos__punto{
+    cursor: pointer;
+    height: 2rem;
+    width: 1.3rem;
+    margin: 0 0.2rem;
+    background-color: lightgray;
+    border-radius: 50%;
+    display: inline-block;
+    transition: background-color 0.6s ease;
+}
+
+.slideshowContainer__rubrica{
+    font-family: Lora;
+}
+
+.slideshowContainer__parrafo{
+    font-family: Lora;
+}
+
+.puntos__punto:hover, .activo{
+    background-color: gray;
+
+}
+
+
+/* estas los clases es para que las flechas se coloquen en el borde de la pantalla */
+
+.slideshowContainer__next{
+    right: 0;
+}
+
+.slideshowContainer__prev{
+    left: 0;
+}
+
+/* texto dentro de las imágenes */
+
+.slideshowContainer__texto{
+    color: black;
+    font-size: 0.9rem;
+    padding: 0.5rem 0.8rem;
+    bottom: 0.5rem;
+    width: 100%;
+    position: relative;
+    top: 6rem;
+    font-size: 2.4rem;
+    width: 80vw;
+    height: 50vh;
+    color: var(--verdePigmento);
+    left: 9rem;
+    
+}
+
+/* efectos añadidos a los divs de las imágenes y display none */
+
+.slideshowContainer__fade{
+    animation: fade 1.5s;
+    
+}
+
+/* este efecto hace que las imágenes aparezcan como si fuera de la nada */
+
+ @keyframes fade {
+    from{
+        opacity: 0.4;
+    }
+    to{
+        opacity: 1;
+    }
+ }
+
+ .slideshowContainer__diapositiva{
+    display: none;
+    text-align: center;
+    background: url(../media/textures/alvero\ texture.png);
+}
+
+
+/* seccion tarot */
+
+
+
+.tarot{
+    position: relative;
+    top: -5px;
+    background-image: url('../media/textures/ultravioleta\ noise.png');
+    height: 57rem;
+}
+
+.tarot__img{
+    width: 12rem;
+    height: 20rem;
+    border-radius: 8px;
+}
+
+.tarot__titulo{
+    text-align: center;
+    color: var(--rosaRaro);
+    font-size: 2.2rem;
+    margin: 0 0;
+    padding: 3.1rem 0;
+    font-family: Lora;
+}
+
+ /* tarot display grid- Flex para las cartas/texto */
+
+.tarot__arriba{
+    display: grid;
+    grid-template-columns: 50% 50%;
+    width: 100%;
+    background-image: url('../media/textures/ultravioleta\ noise.png');
+}
+
+.tarot__abajo{
+    position: relative;
+    display: grid;
+    grid-template-columns: 50% 50%;
+    width: 100%;
+    margin-top: 4rem;
+    margin-bottom: 5rem;
+    background: url('../media/textures/ultravioleta\ noise.png');
+}
+.tarot__cartas{
+    display: flex;
+    justify-content: space-around;
+    position: relative;
+    bottom: 12px;
+}
+
+.tarot__carta{
+    display: grid;
+    grid-template-columns: 100%;
+    grid-template-rows: 100%;
+   
+}
+
+.tarot__texto{
+    grid-column-start: 2;
+    grid-column-end: 3;
+    padding: 1.8rem;
+}
+ 
+.tarot__texto1{
+    grid-column-start: 1;
+    grid-column-end: 1;
+    padding: 1.8rem;
+} 
+
+.tarot__textoParrafo{
+    font-size: 1.7rem;
+    color: var(--rosaRaro);
+    padding: 0.7rem;
+    font-family: Cormorant;
+}
+
+/* tarot estilos */
+
+.tarot__boton{
+    text-align: center;
+    width: 100%;
+    background-color: transparent;
+    color: var(--colorAlvero);
+    border: none;
+    cursor: pointer;
+    position: relative;
+    bottom: 25px;
+    position: relative;
+    font-family: Long_Cang;
+    font-size: 1.4rem;
+
+    
+}
+
+/* tarot abre Modal */
+
+
+
+.tarot__contenidoModal{
+    height: 40rem;
+    width: 50rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: rgba(0, 0, 0, 1);
+    z-index: 1;
+    position: absolute;
+    justify-content: center;
+    align-items: center;
+    background-color: var(--violetaOscurete);
+    color: var(--colorAlvero);
+    z-index: 10;
+    position: absolute;
+    left: 40%;
+    top: 40%;
+}
+
+.hidden{
+    display: none;
+}   
+
+
+
+
+
+
+/* cards */
+
+.tarot__contenidoImg{
+    width: 24rem;
+    height: 40rem;
+    border-radius: 8px;
+}
+.tarot__cardTexto{
+    font-size: 1.8rem;
+    background: var(--violetaOscurete);
+    font-family: Cormorant;
+}
+
+.tarot__cardTitulo{
+    font-size: 2.3rem;
+    font-family: Lora;
+}
+
+.tarot__cardBoton{
+   
+    position: absolute;
+    top: 1.2rem;
+    right: 2rem;
+    font-size: 5rem;
+    color: #333;
+    cursor: pointer;
+    border: none;
+    background: none;
+      
+}
+
+/* responsive tarot */
+
+
+@media screen and (max-width:976px){
+
+
+    .tarot__cartas{
+        height: 388px;
+    }
+
+    .tarot__arriba{
+        display: block;
+    }
+    .tarot__carta{
+        height: 30rem;
+    }
+  
+    .tarot__boton{
+        bottom: 8rem;
+
+    }
+
+     .tarot__abajo{
+        grid-template-columns: 100%;
+        grid-template-rows: 50% 50%;
+        
+    } 
+
+    .tarot__carta1{
+        grid-row-start: 1;
+        grid-row-start: 2;
+    }
+    .tarot__texto1{
+        grid-row-start: 2;
+        grid-row-end: 3;
+    }
+ 
+
+    .tarot__cartas{
+        display: flex;
+    }
+}
+
+
+
+
+
+/* astrologia */
+.astrologia{
+    position: relative;
+    background: url(../media/textures/violetaOscurete.png);
+    bottom: 2.2rem;
+    
+} 
+
+.astrologia__cards{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    right: 1rem;
+    
+}
+.astrologia__titulo{
+    text-align: center;
+    color: var(--colorAlvero);
+    padding: 1.8rem;
+    font-size: 2.3rem;
+    font-family: Lora;
+    
+}
+
+.astrologia__img{
+    width: 27rem;
+    height: 20rem;
+    position: relative;
+    left: 2.5rem;
+}
+
+.astrologia__tituloCard{
+    color: var(--colorAlvero);
+    padding: 0.8rem;
+    font-size: 1.8rem;
+    text-align: center;
+    font-family: Long_Cang;
+}
+
+
+.astrologia__panel{
+    padding: 0 1rem;
+    background: url(../media/textures/violetaOscurete.png);
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.5s ease-out;
+    color: var(--colorAlvero);
+    font-family: Cormorant;
+}
+
+.acordeon{
+    background: url(../media/textures/violetaOscurete.png);
+    color: var(--colorAlvero);
+    padding: 1rem;
+    width: 100%;
+    border: none;
+    outline: none;
+    text-align: left;
+    font-size: 1.6rem;
+    text-align: center;
+    font-family: Long_Cang;
+}
+
+.acordeon:hover, .activo{
+    cursor: pointer;
+}
+
+
+/* responsive astrologia */
+
+
+
+@media screen and (max-width:1280px) {
+    .astrologia{
+        position: relative;
+        top: 10rem;
+    }
+
+    .astrologia__cards{
+        display: grid;
+        grid-template-rows: 3fr;
+        grid-template-columns: 1fr;
+    }
+
+    .astrologia__solar{
+        display: grid;
+        align-items: center;
+        grid-template-columns: 1fr;
+        grid-template-rows: 5fr;
+    }
+
+    .astrologia__img{
+        margin-left: 0;
+    }
+
+    
+}
+
+@media screen and (max-width:1300px){
+    .astrologia{
+        top: 0.7rem;
+    }
+    .tarot__boton{
+        bottom: 1.7rem;
+    }
+}
+
+@media screen and (max-width:1080px){
+    .tarot__boton{
+        bottom: 5rem;
+    }
+}
+
+@media screen and (max-width:976px){
+    .astrologia{
+        position: relative;
+        top: 31rem;
+    }
+    .tarot__boton{
+        bottom: 8rem;
+    }
+}
+@media screen and (max-width:900px){
+    .astrologia{
+        top: 50rem;     
+    }
+}
+
+@media screen and (max-width: 667px){
+    .astrologia{
+        top: 70rem;
+    }
+}
+
+@media screen and (max-width:439px){
+    .astrologia{
+        top: 90rem;
+    }
+    
+}
+
+
+
+
+
+
+/* kabbalah */
+
+.kabbalah{
+    position: relative;
+    bottom: 2.2rem;
+}
+
+.kabbalah__parallax1{
+    background-image: url('../media/img/kabbalah/arbol\ 1.jpg');
+    height: 100vh;
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-attachment: fixed;
+}
+
+.kabbalah__texto1{
+    text-align: center;
+    background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('../media/textures/verdePigmento.png');
+    font-size: 2.1rem;
+    color: var(--colorAlvero);
+    font-family: Long_Cang;
+}
+
+.kabbalah__parallax2{
+    background-image: url('../media/img/kabbalah/arbol\ 2.jpg');
+    height: 100vh;
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-attachment: fixed;
+}
+.kabbalah__texto2{
+    text-align: center;
+    background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('../media/textures/verdePigmento.png');
+    font-size: 2.1rem;
+    color: var(--colorAlvero);
+    font-family: Long_Cang;
+}
+
+.kabbalah__parallax3{
+    background-image: url('../media/img/kabbalah/arbol\ 3.jpg');
+    height: 100vh;
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-attachment: fixed;
+}
+
+.kabbalah__texto3{
+    text-align: center;
+    background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('../media/textures/verdePigmento.png');
+    font-size: 2.1rem;
+    color: var(--colorAlvero);
+    font-family: Long_Cang;
+}
+
+.kabbalah__parallax4{
+    background-image: url('../media/img/kabbalah/arbol\ 4.jpg');
+    height: 100vh;
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-attachment: fixed;
+}
+
+.kabbalah__texto4{
+    text-align: center;
+    background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('../media/textures/verdePigmento.png');
+    font-size: 2.1rem;
+    color: var(--colorAlvero);
+    font-family: Long_Cang;
+}
+
+
+/* responsive kabbalah */
+
+
+@media screen and (max-width:1280px){
+    .kabbalah{
+        top: 2.5rem;
+    }
+}
+
+@media screen and (max-width:976px){
+    .kabbalah{
+        top: 31rem;
+    }
+}
+@media screen and (max-width:900px){
+    .kabbalah{
+        top: 50rem;     
+    }
+}
+
+@media screen and (max-width: 667px){
+    .kabbalah{
+        top: 70rem;
+    }
+}
+
+@media screen and (max-width:439px){
+    .kabbalah{
+        top: 90rem;
+    }
+    
+}
+
+
+/* contacto */
+
+.contacto__titulo{
+    font-family: Lora;
+
+}
+
+.contacto__parrafo{
+    font-family: Cormorant;
+    font-size: 1.1rem;
+}
+
+.contacto__formularioTitulo{
+    font-family: Lora;
+    font-size: 1.2rem;
+}
+
+.label{
+    font-family: Cormorant;
+    font-size: 1.1rem;
+}
+
+.contacto{
+    background: url('../media/textures/rosaRaro.png');
+    position: relative;
+    bottom: 2.2rem;
+    color: var(--colorAlvero);
+    height: 35rem;
+}
+
+
+.contacto__contenedor{
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+}
+
+
+.contacto__divFormulario{
+    width: 25%;
+     /* text-align: center; */
+}
+
+.contacto__formulario{
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: column;
+   
+}
+
+/* display flex lo coloca horizontalmente, flexwrap hace que no se salga del div, y flex-direction column hace que se ponga en forma de columna */
+
+.inputFormulario{
+    width: 100%;
+    padding: 0 1rem;
+    margin: 1rem 0;
+}
+
+/* esto lo que hace es ajustarse al ancho del div con el width y el padding y el margin lo hace más claro. */
+
+textarea{
+    resize: none;
+}
+
+
+
+.contacto__mapaTitulo{
+    font-family: Lora;
+
+}
+
+.contacto__mapaTexto{
+    font-family: Cormorant;
+    font-size: 1.1rem;
+
+}
+
+#mapa{
+    width: 28rem;
+    height: 16rem;
+}
+
+
+/* media query contacto */
+
+
+@media screen and (max-width:989px){
+
+    .contacto{
+        height: 62rem;
+    }
+
+
+    .contacto__contenedor{
+        display: block;
+        position: relative;
+    
+
+    }
+
+    .contacto__divFormulario{
+        position: absolute;
+        left: 37%;
+    }
+
+    .contacto__mapa{
+        position: absolute;
+        top: 35rem;
+        left: 37%;
+    }
+
+    
+}
+
+@media screen and (max-width:786px){
+    .contacto{
+        height: 64rem;
+    }
+
+    .contacto__mapa{
+        top: 38rem;
+    }
+}
+
+@media screen and (max-width:660px){
+
+    .contacto{
+        height: 67rem;
+    }
+
+    .contacto__mapa{
+        left: 25%;
+        top: 41rem;
+    }
+}
+
+@media screen and (max-width:560px){
+
+    .contacto{
+        height: 70rem;
+    }
+
+    .contacto__mapa{
+        left: 16%;
+        top: 44rem;
+    }
+}
+
+
+
+
+
+/* actividades */
+
+
+.actividades{
+    background: url("../media/textures/verdePigmento.png");
+    position: relative;
+    bottom: 2.2rem;
+}
+
+.card{
+   
+    display: flex;
+    border: 1px solid black;
+    width: 60%;
+    justify-content: space-between;
+    background-color: white;
+    box-shadow: 1rem -0.5rem var(--ultraVioleta);
+    border-radius: 0.8rem;
+    background: var(--verdePigmento);
+}
+
+.contenedorCard{
+
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url("../efecto\ parallax/html5.png");
+    background-size: cover;
+    background-position: center center;
+    background-repeat: no-repeat;
+}
+
+.cardContenido{
+    width: 50%;
+}
+
+.cardContenido__titulo{
+    text-align: center;
+    padding: 2.4rem;
+    font-size: 2rem;
+    font-family: Lora;
+    color: var(--colorAlvero);
+}
+.cardContenido__texto{
+    text-align: center;
+    padding: 0 1.3rem;
+    font-size: 1.4rem;
+    color: var(--colorAlvero);
+    font-family: Cormorant;
+    font-size: 1.6rem;
+}
+
+.actividades__img{
+    max-height: 40rem;
+    max-width: 24rem;
+    border-radius: 0.7rem;
+}
+
+
+
+/* media query actividades */
+
+
+@media screen and (max-width:989px){
+    .actividades__img{
+        max-width: 18rem;
+        max-height: 30rem;
+    }
+    .card{
+        max-height: 30rem;
+    }
+
+    .cardContenido__titulo{
+        font-size: 1.7rem;
+    }
+
+    .cardContenido__texto{
+        font-size: 1rem;
+    }
+}
+
+
+@media screen and (max-width:786px){
+    .actividades__img{
+        max-width: 12rem;
+        max-height: 20rem;
+    }
+    .card{
+        max-height: 20rem;
+        overflow: scroll;
+    }
+}
+
+
+
+
+
+
+
+
+/* footer */
+
+
+
+.footer__columna{
+    display: flex;
+    justify-content: space-between;
+}
+
+
+
+.elemento{
+    list-style-type: none;
+    padding: 1.3rem 2.1rem;
+    font-family: Long_Cang;
+    font-size: 1.5rem;
+}
+
+.footer__columnaTitulo{
+    list-style-type: none;
+    font-size: 2.3rem;
+    padding: 0rem 2.1rem 1.3rem 2.1rem;
+    font-family: Lora;
+}
+
+@media screen and (max-width:827px){
+    .footer__columna{
+        display: block;
+    }
+
+    .footer__columna2{
+        position: relative;
+        left: 30%;
+    }
+
+    .footer__columna3{
+        position: relative;
+        left: 30%;
+    }
+
+    .footer__columna4{
+        position: relative;
+        left: 30%;
+    }
+}
+
+@media screen and (max-width:600px) {
+    .footer__columna2{
+        position: relative;
+        left: 20%;
+    }
+
+    .footer__columna3{
+        position: relative;
+        left: 20%;
+    }
+
+    .footer__columna4{
+        position: relative;
+        left: 20%;
+    }
+}
+
+
+
+
+
+/* peticiones */
+
+.peticiones{
+    background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('../media/textures/alvero\ texture.png');
+    position: relative;
+    bottom: 4rem;
+}
+
+.peticiones__titulo{
+    color: var(--verdePigmento);
+    display: flex;
+    justify-content: center;
+    padding: 1.2rem;
+    font-size: 2.1rem;
+}
+
+.peticiones__intro{
+    color: var(--verdePigmento);
+    display: flex;
+    padding: 1.2rem 11rem 2.4rem 11rem;
+
+}
+
+.peticiones__vacio{
+    color: var(--verdePigmento);
+}
+
+.peticiones__contenedor{
+    height: 60vh;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: top;
+}
+
+.peticiones_contenedorCard{
+    display: flex;
+    
+    border: 1px solid black;
+    width: 35%;
+}
+
+.peticiones__ul{
+    color: var(--verdePigmento);
+}
+
+.peticiones__input{
+    height: 1.6rem;
+    position: relative;
+    bottom: 0.18rem;
+    border-radius: 6px;
+}
+
+.peticiones__button{
+    border: solid 1px black;
+    border-radius: 6px;
+}
+
+/* media query peticiones */
+
+@media screen and (max-width:786px){
+
+    .peticiones{
+        height: 55rem;
+    }
+
+    .peticiones__contenedor{
+        display: block;
+       
+    }
+
+    .peticiones__contenedorCard{
+        position: relative;
+        left: 30%;
+    }
+
+    .peticiones__formulario--2{
+        position: relative;
+        top: 6rem;
+    }
+
+    .peticiones__vacio--2{
+        position: relative;
+        top: 6rem;
+    }
+
+    .peticiones__formulario--3{
+        position: relative;
+        top: 12rem;
+    }
+
+    .peticiones__vacio--3{
+        position: relative;
+        top: 12rem;
+    }
+}
+
+@media screen and (max-width:660px){
+    .peticiones{
+        height: 60rem;
+    }
+}
+
+@media screen and (max-width:560px){
+    .peticiones{
+        height: 65rem;
+    }
+}
+
+
+/* comentarios */
+
+.comentarios{
+    background: url('../media/textures/ultravioleta\ noise.png');
+    position: relative;
+    bottom: 5.3rem;
+    height: 40rem;
+    
+}
+
+.comentarios__titulo{
+    text-align: center;
+    color: var(--rosaRaro);
+    padding: 2.1rem;
+    font-family: Lora;
+}
+
+.comentarios__cards {
+    display: flex;
+    width: 80%;
+    padding: 50px;
+    position: relative;
+    left: 8rem;
+    padding: 0 0 4rem 0;
+  }
+  
+  .comentarios__card {
+  background: linear-gradient(
+    90deg,
+    rgba(0, 114, 255, 1) 1%,
+    rgba(33, 25, 173, 1) 100%
+  );
+  color: white;
+  width: 300px;
+  height: 350px;
+  border-radius: 10px;
+  padding: 30px;
+  box-sizing: border-box;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+
+  box-shadow: -3px 0 10px rgba(0, 0, 0, 0.3), -4px 0 10px rgba(0, 0, 0, 0.2),
+    -5px 0 10px rgba(0, 0, 0, 0.1);
+
+  transition: all 0.3s ease;
+  }
+  
+  .comentarios__card a {
+    color: yellow;
+    text-decoration: none;
+    font-weight: bold;
+  }
+  
+  .comentarios__card a:hover {
+    color: lightyellow;
+  }
+
+    .comentarios__card:hover {
+    margin-right: 80px;
+    transform: rotate(3deg) translateY(-15px);
+  }
+   
+   .comentarios__card .header {
+    flex: 1;
+  }
+  
+  .comentarios__card .header .date {
+    padding: 10px 0;
+  }
+  
+  .comentarios__card .header .title {
+    font-size: 28px;
+    color: #4763ef;
+  }
+  
+  
+  .element-1:hover,
+  .element-2:hover,
+  .element-3:hover {
+    margin-left: -130px;
+  }
+
+
+
+
+  /* comentar */
+
+  .comentar{
+    background: url('../media/textures/violetaOscurete.png');
+    position: relative;
+    bottom: 6.6rem;
+
+  }
+
+  .comentar__titulo{
+    text-align: center;
+    font-family: Lora;
+    color: var(--rosaRaro);
+  }
+
+  #comments-container {
+    width: 600px;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+  }
+  .comment-container {
+    border: solid 1px #91a8c2;
+    border-radius: 5px;
+    padding: 10px;
+    color: white;
+    background-color: #1e2f41;
+  }
+  
+  .responses-container {
+    margin-top: 10px;
+    padding-left: 20px;
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+  }
+  .responses-container .comment-container {
+    background-color: #4e5a66;
+    color: white;
+  }
+  
+  .input {
+    padding: 5px 15px;
+    border: solid 1px #ccc;
+    border-radius: 15px;
+    margin: 5px 0;
+  }
+  
+  button {
+    border-radius: 5px;
+    border: none;
+    background-color: #eee;
+    padding: 5px 15px;
+    cursor: pointer;
+    margin-right: 5px;
+  }
+  
+  button:hover {
+    background-color: #1c6fc2;
+    color: white;
+  }
